@@ -1,6 +1,8 @@
 <?php
   if(isset($_GET["p"])) {
     $p = $_GET["p"];
+  } else {
+    $p = "none";
   }
 
 ?>
@@ -17,7 +19,7 @@
   <title>
     程式推廣｜
     <?php
-      if($p == "learn") {
+      if($p == "learn" || $p == "none") {
         echo "學程式";
       } else if ($p == "train") {
         echo "練程式";
@@ -49,6 +51,11 @@
   body {
     font-family: "微軟正黑體";
   }
+  .container {
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   </style>
 </head>
 
@@ -79,7 +86,7 @@
       </ul>
     </div>
   </nav>
-
+  <div class="container">
   <?php 
     if($p == "learn") {
       include "learn.php";
@@ -94,7 +101,7 @@
   ?>
 
   <hr>
-
+  </div>
 </body>
 
 </html>

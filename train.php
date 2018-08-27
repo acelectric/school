@@ -2,7 +2,7 @@
 	
 	//宣告一個 link 變數，並執行連結資料庫函式，連結結果會帶入 link 當中
 	
-	$link = mysqli_connect("localhost", "root", "b0642074", "pp_db");
+	$link = mysqli_connect("localhost", "root", "", "pp_db");
 	
 	
 	if (mysqli_connect_errno())
@@ -31,7 +31,7 @@
 
 <?php if(!empty($datas)):?>
 		<?php foreach($datas as $user):?>
-      <div class="card w-75 mx-auto mt-5">
+      <div class="card mx-auto mt-5">
         <h5 class="card-header text-light bg-secondary"><?php echo "{$user['title']}"?>
         <footer class="blockquote-footer float-right text-light"><?php echo "{$user['publish_date']}"?></footer>
         </h5>
