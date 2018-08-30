@@ -25,6 +25,8 @@
         echo "練程式";
       } else if ($p == "teach") {
         echo "實用教學";
+      } else if ($p == "login") {
+        echo "登入";
       } else {
         echo "未知頁面";
       } 
@@ -83,6 +85,11 @@
           <?php if($p == "teach"){echo '<span class="sr-only">(current)</span>';} ?>
           </a>
         </li>
+        <li class="nav-item <?php if($p == "login"){echo "active";}?>">
+          <a class="nav-link" href="?p=login">登入
+          <?php if($p == "login"){echo '<span class="sr-only">(current)</span>';} ?>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -94,6 +101,8 @@
       include "train.php";
     } else if ($p == "teach") {
       include "teach.php";
+    } else if ($p == "login") {
+      include "loginForm.php";
     } else {
       echo "未知頁面";
     } 

@@ -31,7 +31,7 @@
 
 <?php if(!empty($datas)):?>
 	<?php foreach($datas as $user):?>
-      <div class="card w-100 mx-auto mt-5">
+      <div class="card mx-auto mt-5">
         <h5 class="card-header text-light bg-secondary"><?php echo "{$user['title']}"?>
         <footer class="blockquote-footer float-right text-light"><?php echo "{$user['publish_date']}"?></footer>
         </h5>
