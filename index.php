@@ -5,6 +5,7 @@ if (isset($_GET["p"])) {
 } else {
     $p = "none";
 }
+$mysql_pass = "b0642074";
 ?>
 
 

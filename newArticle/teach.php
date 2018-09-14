@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "pp_db");
+$link = mysqli_connect("localhost", "root", "$mysql_pass", "pp_db");
 if (mysqli_connect_errno()) {
     //有錯誤就代表連線失敗
     echo '無法連線資料庫 :<br/>' . mysqli_connect_errno();

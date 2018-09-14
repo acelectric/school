@@ -2,7 +2,7 @@
 	
 	//宣告一個 link 變數，並執行連結資料庫函式，連結結果會帶入 link 當中
 	
-	$link = mysqli_connect("localhost", "root", "", "pp_db");
+	$link = mysqli_connect("localhost", "root", "$mysql_pass", "pp_db");
 	
 	
 	if (mysqli_connect_errno())
