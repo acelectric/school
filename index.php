@@ -1,10 +1,10 @@
 <?php
-  if(isset($_GET["p"])) {
+session_start();
+if (isset($_GET["p"])) {
     $p = $_GET["p"];
-  } else {
+} else {
     $p = "none";
-  }
-
+}
 ?>
 
 
@@ -18,20 +18,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
     程式推廣｜
-    <?php
-      if($p == "learn" || $p == "none") {
-        echo "學程式";
-      } else if ($p == "train") {
-        echo "練程式";
-      } else if ($p == "teach") {
-        echo "實用教學";
-      } else if ($p == "login") {
-        echo "登入";
-      } else {
-        echo "未知頁面";
-      } 
-    ?>
-    
+<?php
+if ($p == "learn" || $p == "none") {
+    echo "學程式";
+} else if ($p == "train") {
+    echo "練程式";
+} else if ($p == "teach") {
+    echo "實用教學";
+} else if ($p == "login") {
+    echo "登入";
+} else if ($p == "backend") {
+    echo "後台";
+} else {
+    echo "未知頁面";
+}
+?>
+
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -70,44 +72,45 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="font-size: 25px">
       <ul class="navbar-nav">
-        <li class="nav-item <?php if($p == "learn"){echo "active";}?>">
+        <li class="nav-item <?php if ($p == "learn") {echo "active";}?>">
           <a class="nav-link" href="?p=learn">學程式
-            <?php if($p == "learn"){echo '<span class="sr-only">(current)</span>';} ?>
+            <?php if ($p == "learn") {echo '<span class="sr-only">(current)</span>';}?>
           </a>
         </li>
-        <li class="nav-item <?php if($p == "train"){echo "active";}?>">
+        <li class="nav-item <?php if ($p == "train") {echo "active";}?>">
           <a class="nav-link" href="?p=train">練題目
-          <?php if($p == "train"){echo '<span class="sr-only">(current)</span>';} ?>
+          <?php if ($p == "train") {echo '<span class="sr-only">(current)</span>';}?>
           </a>
         </li>
-        <li class="nav-item <?php if($p == "teach"){echo "active";}?>">
+        <li class="nav-item <?php if ($p == "teach") {echo "active";}?>">
           <a class="nav-link" href="?p=teach">實用教學
-          <?php if($p == "teach"){echo '<span class="sr-only">(current)</span>';} ?>
+          <?php if ($p == "teach") {echo '<span class="sr-only">(current)</span>';}?>
           </a>
         </li>
-        <li class="nav-item <?php if($p == "login"){echo "active";}?>">
+        <li class="nav-item <?php if ($p == "login") {echo "active";}?>">
           <a class="nav-link" href="?p=login">登入
-          <?php if($p == "login"){echo '<span class="sr-only">(current)</span>';} ?>
+          <?php if ($p == "login") {echo '<span class="sr-only">(current)</span>';}?>
           </a>
         </li>
       </ul>
     </div>
   </nav>
   <div class="container">
-  <?php 
-    if($p == "learn") {
-      include "learn.php";
-    } else if ($p == "train") {
-      include "train.php";
-    } else if ($p == "teach") {
-      include "teach.php";
-    } else if ($p == "login") {
-      include "loginForm.php";
-    } else {
-      echo "未知頁面";
-    } 
-    
-  ?>
+  <?php
+if ($p == "learn") {
+    include "learn.php";
+} else if ($p == "train") {
+    include "train.php";
+} else if ($p == "teach") {
+    include "teach.php";
+} else if ($p == "login") {
+    include "loginForm.php";
+} else if ($p == "backend") {
+    include "backend.php";
+} else {
+    echo "未知頁面";
+}
+?>
 
   <hr>
   </div>
