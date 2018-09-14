@@ -41,8 +41,8 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="?p=learn">全部</a>
     <a class="dropdown-item" href="?p=learn&q=c">c</a>
-    <a class="dropdown-item" href="?p=learn&q=c++">c++</a>
-    <a class="dropdown-item" href="?p=learn&q=c#">c#</a>
+    <a class="dropdown-item" href="?p=learn&q=cpp">c++</a>
+    <a class="dropdown-item" href="?p=learn&q=c-sharp">c#</a>
     <a class="dropdown-item" href="?p=learn&q=java">java</a>
     <a class="dropdown-item" href="?p=learn&q=python">python</a>
     <a class="dropdown-item" href="?p=learn&q=html">html</a>
@@ -63,10 +63,11 @@
           <!--h5 class="card-title"></h5-->
           <p class="card-text"><?php echo "{$user['article']}"?></p>
           <?php 
+            $php_hashlist = array("c","cpp","c-sharp","java","python","html","css","js","php");
             $hashlist = array("c","c++","c#","java","python","html","css","js","php");
-            foreach($hashlist as $hashindex) {
-              if($user[$hashindex]) {
-                echo "<span class='text-primary'>#{$hashindex} <span>";
+            foreach($php_hashlist as $key => $hashindex) {
+              if($user["$hashindex"]) {
+                echo "<span class='text-primary'> {$hashlist["$key"]} <span>";
               }
             }
           ?>
